@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/webhook', (req, res) => {
-    if(req.query["hub.verify_token"] == "myTokenAndShit") {
+    if(req.query["hub.verify_token"] === "myTokenAndShit") {
         req.send(req.query["hub.challenge"]);
     }
     res.send('wrong token')
